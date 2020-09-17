@@ -14,13 +14,16 @@ class MainActivity : AppCompatActivity() {
     var n1 = 0
     var n2 = 0
 
-    val UI_MODE_KEY = "uiMode"
+    private val UI_MODE_KEY = "uiMode"
+    private val UI_MODE_AUTO_VALUE = "AUTO"
+    private val UI_MODE_DAY_VALUE = "DAY"
+    private val UI_MODE_NIGHT_VALUE = "NIGHT"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var sp = getSharedPreferences("APP", Context.MODE_PRIVATE)
+        val sp = getSharedPreferences("APP", Context.MODE_PRIVATE)
 
         btnPlus.setOnClickListener {
             checkValues()
@@ -54,12 +57,10 @@ class MainActivity : AppCompatActivity() {
             tietResult.text?.append((n1 / n2).toString())
         }
 
-        val startMode = sp.getString(UI_MODE_KEY, "AUTO")
-
-        when (startMode) {
-            "AUTO" -> setDefaultNightMode(MODE_NIGHT_FOLLOW_SYSTEM)
-            "DAY" -> setDefaultNightMode(MODE_NIGHT_NO)
-            "NIGHT" -> setDefaultNightMode(MODE_NIGHT_YES)
+        when (sp.getString(UI_MODE_KEY, "AUTO")) {
+            UI_MODE_AUTO_VALUE -> setDefaultNightMode(MODE_NIGHT_FOLLOW_SYSTEM)
+            UI_MODE_DAY_VALUE -> setDefaultNightMode(MODE_NIGHT_NO)
+            UI_MODE_NIGHT_VALUE -> setDefaultNightMode(MODE_NIGHT_YES)
         }
 
         when (getDefaultNightMode()) {
@@ -73,21 +74,21 @@ class MainActivity : AppCompatActivity() {
                 btnDay.id -> {
                     setDefaultNightMode(MODE_NIGHT_NO)
                     sp.edit().apply {
-                        putString(UI_MODE_KEY, "DAY")
+                        putString(UI_MODE_KEY, UI_MODE_DAY_VALUE)
                         apply()
                     }
                 }
                 btnNight.id -> {
                     setDefaultNightMode(MODE_NIGHT_YES)
                     sp.edit().apply {
-                        putString(UI_MODE_KEY, "NIGHT")
+                        putString(UI_MODE_KEY, UI_MODE_NIGHT_VALUE)
                         apply()
                     }
                 }
                 btnAuto.id -> {
                     setDefaultNightMode(MODE_NIGHT_FOLLOW_SYSTEM)
                     sp.edit().apply {
-                        putString(UI_MODE_KEY, "AUTO")
+                        putString(UI_MODE_KEY, UI_MODE_AUTO_VALUE)
                         apply()
                     }
                 }
