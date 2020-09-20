@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">HomeworksAndroid</string>
+    <string name="main_activity_first_number_hint">Первое число</string>
+    <string name="main_activity_second_number_hint">Второе число</string>
+    <string name="main_activity_result_number_hint">Результат</string>
+    <string name="main_activity_plus_button">+</string>
+    <string name="main_activity_minus_button">-</string>
+    <string name="main_activity_multiply_button">*</string>
+    <string name="main_activity_divide_button">/</string>
+    <string name="main_activity_day_toggle_button">Светлая</string>
+    <string name="main_activity_night_toggle_button">Ночная</string>
+    <string name="main_activity_auto_toggle_button">Авто</string>
+    <string name="main_activity_zero_divide_warning">Чел, нельзя делить на ноль</string>
 </resources>
