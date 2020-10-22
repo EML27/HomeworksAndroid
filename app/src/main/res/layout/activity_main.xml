@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:animateLayoutChanges="true">
 
     <Button
         android:id="@+id/btnHidden"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="BARREL ROOOOOOLL"
+        android:text="Color change"
         app:layout_constraintBottom_toTopOf="@id/btnShowHide"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,7 +22,7 @@
         android:id="@+id/btnShowHide"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="BARREL ROOOOOOLL"
+        android:text="BARREL ROLL"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
