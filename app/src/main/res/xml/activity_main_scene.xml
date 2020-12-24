@@ -28,7 +28,7 @@
             <Layout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintBottom_toTopOf="@id/row0"
+                app:layout_constraintBottom_toTopOf="@id/clMainKeyboard"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
         </Constraint>
@@ -40,7 +40,7 @@
             <Layout
                 android:layout_width="match_parent"
                 android:layout_height="18dp"
-                app:layout_constraintBottom_toTopOf="@id/row0"
+                app:layout_constraintBottom_toTopOf="@id/clMainKeyboard"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
         </Constraint>
